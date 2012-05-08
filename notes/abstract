@@ -1,0 +1,4 @@
+In this talk, we will take a look at pure functional code excerpts using the Scala programming language taken from a live production application running on the IBM WebSphere Application Server. We will be looking at data structures and programming techniques such as Lenses, JSON parsing and database programming with iteratees, all of which are used to produce the application.
+
+The result is a high reliability software with the ability to adapt to change from ever-demanding consumers without fear of failure.
+
