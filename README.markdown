@@ -1,7 +1,7 @@
-Docbook Document
-================
+Pure Functional Programming Live
+================================
 
-A template from which to create a Docbook document.
+Slides for YOW! 2012 on Pure Functional Programming Live.
 
 To get started, perform the following:
 

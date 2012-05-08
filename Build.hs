@@ -5,5 +5,5 @@ import Build.Document
 c :: 
   Config
 c = 
-  defaultConfig "docbook-document" "Docbook Document"
+  defaultConfig "purefp-live" "Pure Functional Programming Live"
 
