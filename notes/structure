@@ -1,0 +1,19 @@
+* Reassurance of real-world application.
+  * Web application with DB2 UDB, Oracle and MSSQL backend, heavy javascript UI front-end
+  * Lots of data shifting
+  * Data integrity issues
+  * Runs on IBM WebSphere Application Server 6/7
+* Pure Functional Programming
+  * Reminder of Definition
+  * Available on the JVM via Scala
+  * Requires library support (Scalaz and friends)
+* JSON data
+  * Parsing
+  * Combinator library
+  * Logging with Writer
+* Database programming
+  * Multiple vendors
+  * JDBC
+  * Logging with Writer again
+  * Iteratee
+    * Composition
