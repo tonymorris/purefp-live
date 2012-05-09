@@ -16,4 +16,5 @@
   * JDBC
   * Logging with Writer again
   * Iteratee
+    * Stacked on an arbitrary monad and is a monad itself
     * Composition
