@@ -8,8 +8,30 @@
     ]>
 
 <sect1>
-  <title>Introduction</title>
-  <para>
-    TODO &mdash; &ellipsis; &reg;
-  </para>
+  <title>Practical Application of Pure FP</title>
+  <sect2>
+    <title>Unpractical?</title>
+    <para>
+      Someone on the Internet once endowed me with a profound insight:
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/pfpiu.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          Pure Functional Programming is Unpractical
+        </caption>
+      </mediaobject>
+    </para>
+  </sect2>
+  <sect2>
+    <title>Oh really?</title>
+    <para>
+      And I thought to myself:
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/orly.jpg" format="JPG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+  </sect2>
 </sect1>
