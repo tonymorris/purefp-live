@@ -35,13 +35,15 @@
     </para>
   </sect2>
   <!--
-  Then after much deliberation, psychoanalysis, hypothesising, a Psychology degree and peer discussion, I arrive at the current, following position: ... Oh I see, you are just exhibiting your anxiety neurosis in an acute episode, while simultaneously attempting to hide it. Nothing to do with functional programming, right, I understand. Well carry on then. We'll be over here discussing functional programming.
+  Then after much deliberation, psychoanalysis, hypothesising, a psychology degree and peer discussion, I arrive at the current, following position: ... Oh I see, you are just exhibiting your anxiety neurosis in an acute episode, while simultaneously attempting to hide it. Nothing to do with functional programming, right, I understand. Well carry on then. We'll be over here discussing functional programming.
 
   But this doesn't stop the emails coming in
     * I want to be a functional programmer, how?
     * Am I a functional programmer? (Yes/No/FileNotFound)
     * My peers are not interested in functional programming, but I am &mdash; how do I escape?
     * Is the SwiggleTwiz language a functional programming language?
+    * How can I do functional programming in the real [imaginary, neurotic] world?
+        * YOU ALREADY ARE! KTHXBAI
 
  These questions already assume (incorrectly) *way* too much about what functional programming even is.
 
