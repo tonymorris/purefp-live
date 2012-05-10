@@ -8,6 +8,10 @@
 
 <article id="PureFPLive" xmlns:xi="http://www.w3.org/2001/XInclude">
   <xi:include href="articleinfo.xml"/>
+  <sect1>
+    <title>abc</title>
+    <para>def</para>
+  </sect1>
   <xi:include href="introduction.xml"/>
   <xi:include href="PGPKEY.xml"/>
   <xi:include href="CC-BY-SA.xml"/>

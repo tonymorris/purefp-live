@@ -7,7 +7,7 @@
       <!ENTITY reg "&#174;">
     ]>
 
-<sect1>
+<sect1 id="Introduction">
   <title>Practical Application of Pure FP</title>
   <sect2>
     <title>Unpractical?</title>
@@ -34,4 +34,27 @@
       </mediaobject>
     </para>
   </sect2>
+  <!--
+  Then after much deliberation, psychoanalysis, hypothesising, a Psychology degree and peer discussion, I arrive at the current, following position: ... Oh I see, you are just exhibiting your anxiety neurosis in an acute episode, while simultaneously attempting to hide it. Nothing to do with functional programming, right, I understand. Well carry on then. We'll be over here discussing functional programming.
+
+  But this doesn't stop the emails coming in
+    * I want to be a functional programmer, how?
+    * Am I a functional programmer? (Yes/No/FileNotFound)
+    * My peers are not interested in functional programming, but I am &mdash; how do I escape?
+    * Is the SwiggleTwiz language a functional programming language?
+
+ These questions already assume (incorrectly) *way* too much about what functional programming even is.
+
+ * Perhaps then, we should ask, what is functional programming?
+    * But nobody likes being told that they don't know what functional programming is
+    * The emails keep coming
+
+ * Let's then, suggest more appropriate, answerable questions
+    * Functional programming is a thesis
+    * We measure adherence to the FP thesis along a *continuum* (slider)
+    * To what extent am I functional programming?
+      * Incidentally, I have never met a programmer for which the answer to this is zero, or even close to it.
+    * To what extent does the SwizzleTwig language accommodate functional programming?
+
+  -->
 </sect1>
