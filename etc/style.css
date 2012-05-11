@@ -285,3 +285,7 @@ pre.programlisting {
   font-style: italic;
   font-size: medium;
 }
+
+.mediaobject {
+  text-align: center;
+}
