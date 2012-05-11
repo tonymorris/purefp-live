@@ -1,9 +1,12 @@
-personal_ws-1.1 en 33 
+personal_ws-1.1 en 37 
 organization
 waivable
 AUTHORIZED
+SwiggleTwiz
 synching
 Ssection
+SwizzleTwig
+refactor
 phonogram
 sublicense
 Docbook
@@ -27,6 +30,7 @@ CCPL
 relicensing
 JSON
 WIPO
+Wadler
 synchronization
 Licensor
 WebSphere
