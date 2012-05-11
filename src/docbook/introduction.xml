@@ -5,6 +5,8 @@
       <!ENTITY mdash "&#8212;">
       <!ENTITY ellipsis "&#8230;">
       <!ENTITY reg "&#174;">
+      <!ENTITY square "&#9744;">
+      <!ENTITY squarewithcross "&#9746;">
     ]>
 
 <sect1 id="Introduction">
@@ -69,7 +71,7 @@
       </listitem>
       <listitem>
         <para>
-          Is the SwiggleTwiz language a functional programming language?
+          Is the SwiggleTwiz language a functional programming language? <code>&square; Yes &square; No &squarewithcross; FileNotFound</code>
         </para>
       </listitem>
       <listitem>
