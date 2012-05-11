@@ -34,6 +34,26 @@
       </mediaobject>
     </para>
   </sect2>
+  <sect2>
+    <title>But it turns out&ellipsis;</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Well, it turns out that this&ellipsis; well, it's just layers of wrong.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          A fascinating study of the psychoanalytic theory of anxiety neurosis, if you will.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In the meantime, we'll be over here discussing functional programming &mdash; let's get on with it.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
   <!--
   Then after much deliberation, psychoanalysis, hypothesising, a psychology degree and peer discussion, I arrive at the current, following position: ... Oh I see, you are just exhibiting your anxiety neurosis in an acute episode, while simultaneously attempting to hide it. Nothing to do with functional programming, right, I understand. Well carry on then. We'll be over here discussing functional programming.
 
