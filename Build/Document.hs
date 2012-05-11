@@ -85,6 +85,7 @@ defaultConfig n t =
          [
            ("html.stylesheet", takeFileName style)
          , ("chunk.section.depth", "3")
+         , ("chunk.first.sections", "1")
          , ("paper.type", "A4")
          , ("draft.watermark.image", [])
          , ("body.font.family", "Delicious")
