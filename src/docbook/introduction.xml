@@ -54,30 +54,64 @@
       </listitem>
     </itemizedlist>
   </sect2>
-  <!--
-  Then after much deliberation, psychoanalysis, hypothesising, a psychology degree and peer discussion, I arrive at the current, following position: ... Oh I see, you are just exhibiting your anxiety neurosis in an acute episode, while simultaneously attempting to hide it. Nothing to do with functional programming, right, I understand. Well carry on then. We'll be over here discussing functional programming.
-
-  But this doesn't stop the emails coming in
-    * I want to be a functional programmer, how?
-    * Am I a functional programmer? (Yes/No/FileNotFound)
-    * My peers are not interested in functional programming, but I am &mdash; how do I escape?
-    * Is the SwiggleTwiz language a functional programming language?
-    * How can I do functional programming in the real [imaginary, neurotic] world?
-        * YOU ALREADY ARE! KTHXBAI
-
- These questions already assume (incorrectly) *way* too much about what functional programming even is.
-
- * Perhaps then, we should ask, what is functional programming?
-    * But nobody likes being told that they don't know what functional programming is
-    * Nor do they enjoy being told they are neurotic (I do by the way!)
-    * Nevertheless, the emails keep coming
-
- * Let's then, suggest more appropriate, answerable questions
-    * Functional programming is a thesis
-    * We measure adherence to the FP thesis along a *continuum* (slider)
-    * To what extent am I functional programming?
-      * Incidentally, I have never met a programmer for which the answer to this is zero, or even close to it.
-    * To what extent does the SwizzleTwig language accommodate adherence to the functional programming thesis?
-
-  -->
+  <sect2>
+    <title>The questions still come</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Questions that inappropriately assume <emphasis>way too much</emphasis> about what functional programming even is.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          I want to be a functional programmer, how?
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Is the SwiggleTwiz language a functional programming language?
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          How can I do functional programming in the real world?
+          <footnote>
+            <para>
+              you already are, that's how!
+            </para>
+          </footnote>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Let's refactor our questions</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Functional programming is a thesis (c.f. Wadler, Hughes).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We measure adherence to the FP thesis along a <emphasis>continuum</emphasis>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          To what extent am I functional programming?
+          <footnote>
+            <para>
+              There does not exist a programmer for which this answer is zero, or close to it.
+            </para>
+          </footnote>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          To what extent does the SwizzleTwig language accommodate adherence to the functional programming thesis?
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
 </sect1>
