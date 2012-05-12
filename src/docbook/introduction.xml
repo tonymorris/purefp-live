@@ -19,9 +19,6 @@
         <imageobject>
           <imagedata fileref="resources/images/pfpiu.png" format="PNG"/>
         </imageobject>
-        <caption>
-          Pure Functional Programming is Unpractical
-        </caption>
       </mediaobject>
     </para>
   </sect2>
