@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+    <!ENTITY mdash "&#8212;">
+    <!ENTITY ellipsis "&#8230;">
+    <!ENTITY reg "&#174;">
+    <!ENTITY square "&#9744;">
+    <!ENTITY squarewithcross "&#9746;">
+    ]>
+
+<sect1 id="Iteratee">
+  <title>Iteratee</title>
+  <sect2>
+    <title>The Problem</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Here is a function signature to return every second result of a database query:
+          <code>def everySecond(sql: String): ResultSet</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Here is a function signature to return the first 10 results of a database query satisfying some condition:
+          <code>def first10(sql: String, p: Row => Boolean): ResultSet</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Here is a function signature that combines both:
+          <code>def combine(r1: ResultSet, r2: ResultSet): ResultSet</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Just kidding &mdash; iterators do not compose!
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>The Quasi-Solutions</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Read the <code>ResultSet</code> into memory:
+          <code>def combine(r1: List[Row], r2: List[Row]): List[Row]</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Hand-fuse all database operations &mdash; explosion of code repetition and bugs-infinite
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Turning Iterators on Their Head</title>
+    <programlisting>
+sealed trait Input[E]
+case class Empty[E]() extends Input[E]
+case class Eof[E]() extends Input[E]
+case class El[E](e: E) extends Input[E]
+
+// that which is being iterated
+sealed trait Iteratee[E, A]
+case class Done[E, A](a: A, r: Input[E])
+      extends Iteratee[E, A]
+case class Cont[E, A](k: Input[E] => Iteratee[E, A])
+      extends Iteratee[E, A]</programlisting>
+  </sect2>
+  <sect2>
+    <title>Iteratees Compose and Can Operate on Big Data</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>def map[A, B](f: A => B): Iteratee[E, A] => Iteratee[E, B]</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>def flatMap[A, B](f: A => Iteratee[E, B]): Iteratee[E, A] => Iteratee[E, B]</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Iteratees can run on data as large as the result of their composition.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+</sect1>
