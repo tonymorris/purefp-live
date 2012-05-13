@@ -1,4 +1,4 @@
-personal_ws-1.1 en 37 
+personal_ws-1.1 en 40 
 organization
 waivable
 AUTHORIZED
@@ -15,6 +15,7 @@ recognizably
 Licence
 ShareAlike
 TODO
+UDB
 pre
 NONINFRINGEMENT
 utilizing
@@ -35,4 +36,6 @@ synchronization
 Licensor
 WebSphere
 Berne
+SQL
 phonograms
+inequivalent
