@@ -107,4 +107,12 @@ val op = usecase modify (!_)
 val result = op(json)
 </programlisting>
   </sect2>
+  <sect2>
+    <title>Questions?</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/ask-questions.jpg" format="JPG"/>
+        </imageobject>
+      </mediaobject>
+  </sect2>
 </sect1>
