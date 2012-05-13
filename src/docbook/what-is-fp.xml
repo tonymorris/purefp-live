@@ -61,13 +61,13 @@ val r2 = arbitrary(function(args));</programlisting>
   <sect2>
     <title>Example of Referential Transparency</title>
     <programlisting>
-val s = "Hello";
+val s = "Hello"
 val x = s.reverse
-val r1 = f(x);
-val r2 = g(x);</programlisting>
+val r1 = f(x)
+val r2 = g(x)</programlisting>
     <programlisting>
-val r1 = f(s.reverse);
-val r2 = g(s.reverse);</programlisting>
+val r1 = f(s.reverse)
+val r2 = g(s.reverse)</programlisting>
     <itemizedlist>
       <listitem>
         <para>
@@ -79,13 +79,13 @@ val r2 = g(s.reverse);</programlisting>
   <sect2>
     <title>Example of <emphasis>not</emphasis> Referential Transparency</title>
     <programlisting>
-val s = new StringBuilder("Hello");
+val s = new StringBuilder("Hello")
 val x = s.reverse
-val r1 = f(x);
-val r2 = g(x);</programlisting>
+val r1 = f(x)
+val r2 = g(x)</programlisting>
     <programlisting>
-val r1 = f(s.reverse);
-val r2 = g(s.reverse);</programlisting>
+val r1 = f(s.reverse)
+val r2 = g(s.reverse)</programlisting>
     <itemizedlist>
       <listitem>
         <para>
