@@ -7,6 +7,7 @@
     <!ENTITY reg "&#174;">
     <!ENTITY square "&#9744;">
     <!ENTITY squarewithcross "&#9746;">
+    <!ENTITY acuteu "&#218;">
     ]>
 
 <sect1 id="Iteratee">
@@ -16,25 +17,25 @@
     <itemizedlist>
       <listitem>
         <para>
-          Here is a function signature to return every second result of a database query:
-          <code>def everySecond(sql: String): ResultSet</code>
+          Here is a function signature to return the first result of a database result-set:
+          <code>def first(sql: String): Option[Row]</code>
         </para>
       </listitem>
       <listitem>
         <para>
-          Here is a function signature to return the first 10 results of a database query satisfying some condition:
-          <code>def first10(sql: String, p: Row => Boolean): ResultSet</code>
+          Here is a function signature to drop the first <code>n</code> results of a database result-set:
+          <code>def drop(sql: String, n: Int): ResultSet</code>
         </para>
       </listitem>
       <listitem>
         <para>
-          Here is a function signature that combines both:
+          Here is a function signature that combines result-sets so we can combine the operations on them:
           <code>def combine(r1: ResultSet, r2: ResultSet): ResultSet</code>
         </para>
       </listitem>
       <listitem>
         <para>
-          Just kidding &mdash; iterators do not compose!
+          JUST KIDDING &mdash; iterators do not compose!
         </para>
       </listitem>
     </itemizedlist>
@@ -86,6 +87,67 @@ case class Cont[E, A](k: Input[E] => Iteratee[E, A])
       <listitem>
         <para>
           Iteratees can run on data as large as the result of their composition.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Peek and Drop</title>
+    <para>
+      And now we can write <code>peek</code> and <code>drop</code> operations:
+      <programlisting>
+def peek[E]: Iteratee[E, Option[E]] = {
+  def step(s: Input[E]): Iteratee[E, Option[E]] =
+    s match {
+      case Empty() => Cont(step)
+      case Eof()   => Done(None, Eof())
+      case El(k)   => Done(Some(k), Eof())
+    }
+  Cont(step)
+}
+
+def drop[E](n: Int): Iteratee[E, Unit] = {
+  def step(s: Input[E]): Iteratee[E, Unit] =
+    s match {
+      case Empty() => Cont(step)
+      case Eof()   => Done((), Eof())
+      case El(_)   => drop(n - 1)
+    }
+  if (n == 0) Done((), Empty())
+  else Cont(step)
+}</programlisting>
+    </para>
+  </sect2>
+  <sect2>
+    <title>And Then We Combine Them Indefinitely&ellipsis;</title>
+    <programlisting>
+val r: Iteratee[E, A] =
+  for {
+    x &lt;- peek    // x: Option[A]
+    _ &lt;- drop(n)
+    y &lt;- peek    // y: Option[A]
+  } yield &ellipsis;</programlisting>
+  </sect2>
+  <sect2>
+    <title>But There's a Catch</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Iteratee traversal will consume stack-space <emphasis>proportional to the size of the data</emphasis>!
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We can use the Free monad to implement trampolining<footnote>
+            <para>
+              Stackless Scala With Free Monads &mdash; R&acuteu;nar Bjarnason
+            </para>
+          </footnote>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          This allows us to mechanically transform our program to consume heap and garbage-collection instead
         </para>
       </listitem>
     </itemizedlist>
