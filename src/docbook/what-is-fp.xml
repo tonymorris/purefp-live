@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+    <!ENTITY mdash "&#8212;">
+    <!ENTITY ellipsis "&#8230;">
+    <!ENTITY reg "&#174;">
+    <!ENTITY square "&#9744;">
+    <!ENTITY squarewithcross "&#9746;">
+    ]>
+
+<sect1 id="WhatIsFP">
+  <title>What is Pure Functional Programming?</title>
+  <sect2>
+    <title>Split Question</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          What does pure functional programming even mean? <emphasis>Easy to answer, takes a few minutes</emphasis>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          What are the practical consequences of adherence to this thesis? <emphasis>Difficult to answer, an infinite-length study of many fields of mathematics/computability.</emphasis>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Referential Transparency</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Central to the thesis of functional programming is the notion of <emphasis>referential transparency</emphasis> (RT).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          RT implies that we may <emphasis>substitute an expression with its value without affecting program outcome</emphasis>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Referential Transparency</title>
+    <programlisting>
+val x = function(args);
+val r1 = arbitrary(x);
+val r2 = arbitrary(x);</programlisting>
+    <programlisting>
+val r1 = arbitrary(function(args));
+val r2 = arbitrary(function(args));</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          If these two programs produce the same outcome then <code>function</code> is <emphasis>referentially transparent</emphasis>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Example of Referential Transparency</title>
+    <programlisting>
+val s = "Hello";
+val x = s.reverse
+val r1 = f(x);
+val r2 = g(x);</programlisting>
+    <programlisting>
+val r1 = f(s.reverse);
+val r2 = g(s.reverse);</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Regardless of the implementations of <code>f</code> and <code>g</code>, these two programs are (extensionally) equivalent.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Example of <emphasis>not</emphasis> Referential Transparency</title>
+    <programlisting>
+val s = new StringBuilder("Hello");
+val x = s.reverse
+val r1 = f(x);
+val r2 = g(x);</programlisting>
+    <programlisting>
+val r1 = f(s.reverse);
+val r2 = g(s.reverse);</programlisting>
+    <itemizedlist>
+      <listitem>
+        <para>
+          There exists at least one (many) values of <code>f</code> and <code>g</code>, such that these two programs are inequivalent.
+        </para>
+      </listitem>
+        <listitem>
+        <para>
+          <emphasis>In pure functional programming, all functions are referentially transparent (aka pure).</emphasis>
+        </para>
+      </listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>

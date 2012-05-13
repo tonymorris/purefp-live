@@ -121,4 +121,27 @@
       </listitem>
     </itemizedlist>
   </sect2>
+  <sect2>
+    <title>Actual Deployment</title>
+    <para>
+      We will be looking at pure FP code and data structures:
+      <itemizedlist>
+        <listitem>
+          <para>
+            running in IBM WebSphere Application Server 6/7
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            passing large amounts of (JSON) data between databases
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            running queries against IBM DB2 UDB, Oracle Database 11, MS SQL Server 2008
+          </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </sect2>
 </sect1>
