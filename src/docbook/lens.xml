@@ -99,9 +99,9 @@ val jArrayL = @?> {
     <programlisting>
 val usecase =
   jObjectL >=>
-  lookup("wibble") >=>
+  lookupL("wibble") >=>
   jArrayL >=>
-  lookup(_ startsWith 'F')(jObjectL) >=>
+  lookupL(_ startsWith 'F')(jObjectL) >=>
   jBooleanL
 val op = usecase modify (!_)
 val result = op(json)
