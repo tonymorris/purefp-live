@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+    <!ENTITY mdash "&#8212;">
+    <!ENTITY ellipsis "&#8230;">
+    <!ENTITY reg "&#174;">
+    <!ENTITY square "&#9744;">
+    <!ENTITY squarewithcross "&#9746;">
+    ]>
+
+<sect1 id="Lenses">
+  <title>Lenses</title>
+  <sect2>
+    <title>Use-case</title>
+    <blockquote>
+      <para>
+        Given a JSON value, if it is an object, get the value associated with the "wibble" key and if that is an array, get the first value that is an object and get its first key starting with 'F' and if that is a boolean, negate it.
+      </para>
+    </blockquote>
+  </sect2>
+  <sect2>
+    <title>Er no</title>
+    <programlisting>
+json match {
+  case JObject(x) =>
+    x find { case (k, v) => k == "wibble" } match {
+      case JArray(y) =>
+        y collect { case JObject(z) => z } match {
+          case Some(q) =>
+            q find { case (k, v) => k startsWith 'F' } match {
+              case JBool(r) => &ellipsis; negate r, HELP I AM TRAPPED!
+              case _ => json
+            }
+          case None => json
+        }
+      case _ => json
+    }
+  case _ => json
+}</programlisting>
+  </sect2>
+</sect1>
