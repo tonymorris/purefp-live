@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+    <!ENTITY mdash "&#8212;">
+    <!ENTITY ellipsis "&#8230;">
+    <!ENTITY reg "&#174;">
+    ]>
+
+<sect1 id="More">
+  <title>More&ellipsis;</title>
+  <sect2>
+    <title>Structures</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>Zipper</code> for one-hole context into a JSON data structure
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>Monad</code> and <code>Applicative Functor</code> for composing database actions with automatic resource handling
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>Category</code>, <code>Product Tensor</code>, <code>[Arrow]Choice</code> for composing lenses
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>WriterT</code> and <code>ReaderWriterStateT</code> for logging pure functional computation
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>State</code> monad and <code>Costate</code> comonad for combining lens and partial lens operations
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Peek-a-boo</title>
+    <para>
+      &ellipsis; and all this is running on IBM WebSphere Application Server and IBM DB2 UDB without its knowledge
+    </para>
+    <para>
+      Win!
+    </para>
+  </sect2>
+</sect1>

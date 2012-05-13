@@ -152,4 +152,12 @@ val r: Iteratee[E, A] =
       </listitem>
     </itemizedlist>
   </sect2>
+  <sect2>
+    <title>Questions?</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/ask-questions.jpg" format="JPG"/>
+        </imageobject>
+      </mediaobject>
+  </sect2>
 </sect1>

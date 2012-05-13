@@ -1,9 +1,9 @@
-personal_ws-1.1 en 54 
+personal_ws-1.1 en 55 
 ShareAlike
 Ssection
 SwiggleTwiz
 JSON
-Scala
+scala
 Stackless
 MERCHANTIBILITY
 Codez
@@ -50,6 +50,7 @@ Monads
 ness
 synchronization
 synching
+comonad
 ADTs
 CCPL
 waivable

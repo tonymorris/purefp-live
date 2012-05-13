@@ -14,6 +14,8 @@
   <xi:include href="adt.xml"/>
   <xi:include href="lens.xml"/>
   <xi:include href="iteratee.xml"/>
+  <xi:include href="more.xml"/>
+  <xi:include href="codeexamples.xml"/>
   <xi:include href="PGPKEY.xml"/>
   <xi:include href="CC-BY-SA.xml"/>
 </article>
