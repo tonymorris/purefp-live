@@ -103,7 +103,8 @@ val usecase =
   jArrayL >=>
   lookup(_ startsWith 'F')(jObjectL) >=>
   jBooleanL
-val result = usecase modify (!_)
+val op = usecase modify (!_)
+val result = op(json)
 </programlisting>
   </sect2>
 </sect1>
