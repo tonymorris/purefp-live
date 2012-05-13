@@ -35,30 +35,33 @@
   </sect2>
   <sect2>
     <title>But it turns out&ellipsis;</title>
-    <itemizedlist>
-      <listitem>
-        <para>
-          Well, it turns out that this&ellipsis; well, it's just layers of wrong.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          A fascinating study of the psychoanalytic theory of anxiety neurosis, if you might be so inclined.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          In the meantime, we'll be over here discussing functional programming &mdash; let's get on with it.
-        </para>
-      </listitem>
-    </itemizedlist>
+    <para>
+      Well, it turns out that this&ellipsis; it's just wrong, in layers. Layers of wrong.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/delete-recycle-bin.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
   </sect2>
   <sect2>
-    <title>Questions</title>
+    <title>A Fascinating Case Study</title>
+    <subtitle>&ellipsis;of the Psychoanalytic Theory of Anxiety Neurosis perhaps?</subtitle>
+    <para>
+      In any case, we'll be over here discussing functional programming &mdash; let's get on with it.
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="resources/images/low-disk-space.jpg" format="JPG"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+  </sect2>
+  <sect2>
+    <title>I Receive Questions</title>
     <itemizedlist>
       <listitem>
         <para>
-          Questions that inappropriately assume <emphasis>way too much</emphasis> about what functional programming even is.
+          Innocent questions that inappropriately assume <emphasis>way too much</emphasis> about what functional programming even is.
         </para>
       </listitem>
       <listitem>
@@ -93,7 +96,12 @@
       </listitem>
       <listitem>
         <para>
-          We measure adherence to the FP thesis along a <emphasis>continuum</emphasis> and we ask questions about practical benefits accordingly.
+          We measure adherence to the FP thesis along a <emphasis>continuum</emphasis>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We ask questions about practical benefits accordingly.
         </para>
       </listitem>
       <listitem>
