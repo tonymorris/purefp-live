@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+    <!ENTITY mdash "&#8212;">
+    <!ENTITY ellipsis "&#8230;">
+    <!ENTITY reg "&#174;">
+    <!ENTITY square "&#9744;">
+    <!ENTITY squarewithcross "&#9746;">
+    ]>
+
+<sect1 id="AlgebraicDataTypes">
+  <title>Algebraic Data Types</title>
+  <sect2>
+    <title>JSON</title>
+    <para>
+      A JSON value may be described as:
+      <itemizedlist>
+        <listitem>
+          <para>
+            A boolean <emphasis>or</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            A number <emphasis>or</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            A string <emphasis>or</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            A null value <emphasis>or</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            A JSON array &mdash; list of JSON values <emphasis>or</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            A JSON object &mdash; list of pair of string and JSON values
+          </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </sect2>
+  <sect2>
+    <title>Or-ness</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          Many languages are amenable to the concept of <emphasis>and</emphasis> but not all to the concept of <emphasis>or</emphasis>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          These disjunctive data types are often called algebraic data types (ADTs), variant types or sum types, because they correspond to summation
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          JSON is a <emphasis>closed</emphasis> ADT with several <emphasis>data constructors</emphasis>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We inspect constructors of ADTs with <emphasis>pattern-matching</emphasis>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          It is a <emphasis>recursive</emphasis> ADT, because it references itself in at least one (two) of its data constructors
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Teh Scala Cheat Codez</title>
+        <programlisting>
+sealed trait JSON
+case class JBool(b: Boolean) extends JSON
+case class JNumber(n: Double) extends JSON
+case class JString(s: String) extends JSON
+case object JNull extends JSON
+case class JArray(x: List[JSON]) extends JSON
+case class JObject(x: List[(String, JSON)]) extends JSON</programlisting>
+  </sect2>
+</sect1>
