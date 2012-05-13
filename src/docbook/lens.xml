@@ -29,7 +29,7 @@ json match {
         y collect { case JObject(z) => z } match {
           case Some(q) =>
             q find { case (k, v) => k startsWith 'F' } match {
-              case JBool(r) => &ellipsis; negate r, HELP I AM TRAPPED!
+              case JBool(r) => &ellipsis; <emphasis role="bold">negate r, HELP I AM TRAPPED!</emphasis>
               case _ => json
             }
           case None => json
