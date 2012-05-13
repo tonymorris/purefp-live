@@ -41,11 +41,17 @@
   </sect2>
   <sect2>
     <title>Peek-a-boo</title>
-    <para>
-      &ellipsis; and all this is running on IBM WebSphere Application Server and IBM DB2 UDB without its knowledge
-    </para>
-    <para>
-      Win!
-    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          &ellipsis; and all this is running on IBM WebSphere Application Server and IBM DB2 UDB without its knowledge
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Win!
+        </para>
+      </listitem>
+    </itemizedlist>
   </sect2>
 </sect1>
