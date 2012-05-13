@@ -39,4 +39,71 @@ json match {
   case _ => json
 }</programlisting>
   </sect2>
+  <sect2>
+    <title>Partial Lens</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <code>case class @?>[A, B](f: A => Option[(B => A, B)])</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          We write a partial lens for each non-nullary ADT constructor
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          e.g. instead of the constructor <code>JArray: List[JSON] => JSON</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          we complement with <code>jArrayL: JSON @?> List[JSON]</code>
+          <programlisting>
+val jArrayL = @?> {
+  case JArray(x) => Some((JArray(_), x))
+  case _ => None
+}</programlisting>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Partial Lenses Compose under a Category</title>
+      <itemizedlist>
+      <listitem>
+        <para>
+          Given a partial lens over A and B, a partial lens over B and C, we get a partial lens over A and C.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>def compose[A, B, C](f: A @?> B)(g: B @?> C): A @?> C</code>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Implemented as a method on <code>PartialLens</code>, called <code>>=></code>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Use-case Again</title>
+    <blockquote>
+      <para>
+        Given a JSON value, if it is an object, get the value associated with the "wibble" key and if that is an array, get the first value that is an object and get its first key starting with 'F' and if that is a boolean, negate it.
+      </para>
+    </blockquote>
+    <programlisting>
+val usecase =
+  jObjectL >=>
+  lookup("wibble") >=>
+  jArrayL >=>
+  lookup(_ startsWith 'F')(jObjectL) >=>
+  jBooleanL
+val result = usecase modify (!_)
+</programlisting>
+  </sect2>
 </sect1>
