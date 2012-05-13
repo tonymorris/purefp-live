@@ -124,7 +124,7 @@
   <sect2>
     <title>Actual Deployment</title>
     <para>
-      We will be looking at pure FP code and data structures:
+      We will be looking at pure FP code snippets and data structures:
       <itemizedlist>
         <listitem>
           <para>
