@@ -44,12 +44,12 @@
   <sect2>
     <title>Referential Transparency</title>
     <programlisting>
-val x = function(args);
-val r1 = arbitrary(x);
-val r2 = arbitrary(x);</programlisting>
+val x = function(args)
+val r1 = arbitrary(x)
+val r2 = arbitrary(x)</programlisting>
     <programlisting>
-val r1 = arbitrary(function(args));
-val r2 = arbitrary(function(args));</programlisting>
+val r1 = arbitrary(function(args))
+val r2 = arbitrary(function(args))</programlisting>
     <itemizedlist>
       <listitem>
         <para>

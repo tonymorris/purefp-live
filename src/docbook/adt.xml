@@ -54,27 +54,49 @@
     <itemizedlist>
       <listitem>
         <para>
-          Many languages are amenable to the concept of <emphasis>and</emphasis> but not all to the concept of <emphasis>or</emphasis>.
+          Many languages are amenable to the concept of <emphasis>and</emphasis> but few to the concept of <emphasis>or</emphasis>.
         </para>
       </listitem>
       <listitem>
         <para>
-          These disjunctive data types are often called algebraic data types (ADTs), variant types or sum types, because they correspond to summation
+          These disjunctive data types are often called:
+          <itemizedlist>
+            <listitem>
+              <para>
+                algebraic data types (ADTs)
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                variant types
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                sum types, because they correspond to summation in algebra
+              </para>
+            </listitem>
+          </itemizedlist>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+  <sect2>
+    <title>Closed, Recursive</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          JSON is a <emphasis>closed</emphasis> ADT with several, finite <emphasis>data constructors</emphasis>
         </para>
       </listitem>
       <listitem>
         <para>
-          JSON is a <emphasis>closed</emphasis> ADT with several <emphasis>data constructors</emphasis>
+          JSON is a <emphasis>recursive</emphasis> ADT, because it references itself in at least one (two) of its data constructors
         </para>
       </listitem>
-      <listitem>
+        <listitem>
         <para>
           We inspect constructors of ADTs with <emphasis>pattern-matching</emphasis>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          It is a <emphasis>recursive</emphasis> ADT, because it references itself in at least one (two) of its data constructors
         </para>
       </listitem>
     </itemizedlist>
@@ -89,5 +111,14 @@ case class JString(s: String) extends JSON
 case object JNull extends JSON
 case class JArray(x: List[JSON]) extends JSON
 case class JObject(x: List[(String, JSON)]) extends JSON</programlisting>
+  </sect2>
+  <sect2>
+    <title>Pattern-matching</title>
+        <programlisting>
+json match {
+  case JBool(b) => &ellipsis;
+  case JArray(x) => &ellipsis;
+  &ellipsis;
+}</programlisting>
   </sect2>
 </sect1>
