@@ -16,13 +16,27 @@
     <itemizedlist>
       <listitem>
         <para>
-          What does pure functional programming even mean? <emphasis>Easy to answer, takes a few minutes</emphasis>.
+          What does pure functional programming even mean?
+          <itemizedlist>
+            <listitem>
+              <para>
+                <emphasis>Easy to answer, takes a few minutes</emphasis>
+              </para>
+            </listitem>
+          </itemizedlist>
         </para>
       </listitem>
       <listitem>
         <para>
-          What are the practical consequences of adherence to this thesis? <emphasis>Difficult to answer, an infinite-length study of many fields of mathematics/computability.</emphasis>
+          What are the practical consequences of adherence to this thesis?
         </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              <emphasis>Difficult to answer, an infinite-length study of many fields of mathematics/computability</emphasis>
+            </para>
+          </listitem>
+        </itemizedlist>
       </listitem>
     </itemizedlist>
   </sect2>
