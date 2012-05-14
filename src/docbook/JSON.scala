@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.resources.SoapMessages
+
 sealed trait JSON
 case class JBool(b: Boolean) extends JSON
 case class JNumber(n: Double) extends JSON
@@ -39,4 +41,20 @@ object JSON {
       case JObject(x) => Some((JObject(_), x))
       case _ => None
     }
+
+  def lookupL[K, V](k: K): List[(K, V)] @?> V = {
+    @annotation.tailrec
+    def lookupr(z: (List[(K, V)], (K, V), List[(K, V)])): Option[(List[(K, V)], (K, V), List[(K, V)])] =
+      z match {
+        case (l, x@(kk, v), r) if k == kk => Some((l, x, r))
+        case (_, _, Nil)   => None
+        case (l, x, r::rs) => lookupr((x::l, r, rs))
+      }
+    @?> {
+      case Nil => None
+      case h::t => lookupr((Nil, h, t)) map {
+        case (l, (k, v), r) => (vv => l.reverse ::: (k, vv) :: r, v)
+      }
+    }
+  }
 }
