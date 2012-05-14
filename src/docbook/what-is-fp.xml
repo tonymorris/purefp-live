@@ -80,12 +80,18 @@ val x = s.reverse
 val r1 = f(x)
 val r2 = g(x)</programlisting>
     <programlisting>
+val s = "Hello"
 val r1 = f(s.reverse)
 val r2 = g(s.reverse)</programlisting>
     <itemizedlist>
       <listitem>
         <para>
           Regardless of the implementations of <code>f</code> and <code>g</code>, these two programs are (extensionally) equivalent.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Therefore, <code>reverse</code> is referentially transparent.
         </para>
       </listitem>
     </itemizedlist>
