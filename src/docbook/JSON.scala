@@ -1,5 +1,3 @@
-import com.sun.xml.internal.ws.resources.SoapMessages
-
 sealed trait JSON
 case class JBool(b: Boolean) extends JSON
 case class JNumber(n: Double) extends JSON
