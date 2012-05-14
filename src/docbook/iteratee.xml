@@ -147,7 +147,7 @@ val r: Iteratee[E, A] =
       </listitem>
       <listitem>
         <para>
-          This allows us to mechanically transform our program to consume heap and garbage-collection instead
+          This allows us to mechanically transform our program to consume heap and use garbage-collection instead
         </para>
       </listitem>
     </itemizedlist>
