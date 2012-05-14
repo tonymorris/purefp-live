@@ -94,9 +94,9 @@ case class Cont[E, A](k: Input[E] => Iteratee[E, A])
   <sect2>
     <title>Peek and Drop</title>
     <para>
-      And now we can write <code>peek</code> and <code>drop</code> operations:
+      And now we can write <code>first</code> and <code>drop</code> operations:
       <programlisting>
-def peek[E]: Iteratee[E, Option[E]] = {
+def first[E]: Iteratee[E, Option[E]] = {
   def step(s: Input[E]): Iteratee[E, Option[E]] =
     s match {
       case Empty() => Cont(step)
@@ -121,12 +121,12 @@ def drop[E](n: Int): Iteratee[E, Unit] = {
   <sect2>
     <title>And Then We Combine Them Indefinitely&ellipsis;</title>
     <programlisting>
-val r: Iteratee[E, A] =
+val r: Iteratee[E, Q] =
   for {
-    x &lt;- peek    // x: Option[A]
+    x &lt;- first   // x: Option[A]
     _ &lt;- drop(n)
-    y &lt;- peek    // y: Option[A]
-  } yield &ellipsis;</programlisting>
+    y &lt;- first   // y: Option[B]
+  } yield f(x, y) // f returns R</programlisting>
   </sect2>
   <sect2>
     <title>But There's a Catch</title>

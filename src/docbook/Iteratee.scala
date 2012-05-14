@@ -11,7 +11,7 @@ case class Cont[E, A](k: Input[E] => Iteratee[E, A])
     extends Iteratee[E, A]
 
 object Iteratee {
-  def peek[E]: Iteratee[E, Option[E]] = {
+  def first[E]: Iteratee[E, Option[E]] = {
     def step(s: Input[E]): Iteratee[E, Option[E]] =
       s match {
         case Empty() => Cont(step)
