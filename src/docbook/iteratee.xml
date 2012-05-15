@@ -76,12 +76,20 @@ case class Cont[E, A](k: Input[E] => Iteratee[E, A])
     <itemizedlist>
       <listitem>
         <para>
-          <code>def map[A, B](f: A => B): Iteratee[E, A] => Iteratee[E, B]</code>
+          <code>def map[A, B](f: A => B): Iteratee[E, A] => Iteratee[E, B]</code><footnote>
+            <para>
+              Called <code>Select</code> in C#/LINQ
+            </para>
+          </footnote>
         </para>
       </listitem>
       <listitem>
         <para>
-          <code>def flatMap[A, B](f: A => Iteratee[E, B]): Iteratee[E, A] => Iteratee[E, B]</code>
+          <code>def flatMap[A, B](f: A => Iteratee[E, B]): Iteratee[E, A] => Iteratee[E, B]</code><footnote>
+            <para>
+              Called <code>SelectMany</code> in C#/LINQ
+            </para>
+          </footnote>
         </para>
       </listitem>
       <listitem>
