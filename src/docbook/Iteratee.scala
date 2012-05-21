@@ -1,7 +1,7 @@
 sealed trait Input[E]
 case class Empty[E]() extends Input[E]
 case class Eof[E]() extends Input[E]
-case class El[E](e: E) extends Input[E]
+case class Val[E](e: E) extends Input[E]
 
 // that which is being iterated
 sealed trait Iteratee[E, A]
@@ -16,7 +16,7 @@ object Iteratee {
       s match {
         case Empty() => Cont(step)
         case Eof()   => Done(None, Eof())
-        case El(k)   => Done(Some(k), Eof())
+        case Val(k)   => Done(Some(k), Eof())
       }
     Cont(step)
   }
@@ -26,7 +26,7 @@ object Iteratee {
       s match {
         case Empty() => Cont(step)
         case Eof()   => Done((), Eof())
-        case El(_)   => drop(n - 1)
+        case Val(_)   => drop(n - 1)
       }
     if (n == 0) Done((), Empty())
     else Cont(step)
